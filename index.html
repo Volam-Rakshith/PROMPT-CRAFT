@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>⚡ PromptCraft // VR DEVELOPMENTS</title>
+  <link rel="stylesheet" href="style.css?v=5.5">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+</head>
+<body data-theme="dark">
+
+  <div class="app-container">
+    <!-- Main Terminal View -->
+    <main class="terminal-main">
+      
+      <!-- Minimalist Header with PromptCraft & VR DEVELOPMENTS Branding -->
+      <header class="terminal-header">
+        <div class="header-left">
+          <div class="window-dots" aria-hidden="true">
+            <span class="w-dot red"></span>
+            <span class="w-dot yellow"></span>
+            <span class="w-dot green"></span>
+          </div>
+          <div class="header-title">
+            <span class="brand">🎯 PromptCraft</span>
+            <span style="opacity: 0.3;">//</span>
+            <span class="sub-brand">VR DEVELOPMENTS</span>
+            <span style="opacity: 0.3;">:</span>
+            <span id="header-model">openai/gpt-oss-120b</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <div class="live-indicator" title="Engine Status">
+            <span id="status-dot" class="status-dot"></span>
+            <span id="status-label">demo mode</span>
+          </div>
+          <button id="history-toggle-btn" class="header-btn" title="View saved prompts (/history)">
+            <span>≡ Prompts</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Scrollable Terminal Log Screen -->
+      <div id="terminal-screen" class="terminal-screen"></div>
+
+      <!-- Clean Terminal Input Line -->
+      <footer class="terminal-input-bar">
+        <div class="input-row">
+          <span class="input-prompt-label">💡</span>
+          <textarea
+            id="terminal-input"
+            class="terminal-textarea"
+            rows="1"
+            placeholder="Enter your topic, idea, or goal (e.g. 'SaaS pricing page', 'Python scraper')..."
+            spellcheck="false"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+          ></textarea>
+          <div class="input-actions">
+            <button id="send-btn" class="action-btn" title="Craft Prompt (Enter)">
+              <span>Craft</span>
+            </button>
+            <button id="stop-btn" class="action-btn stop" title="Stop generating (Ctrl+C)">
+              <span>Stop</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="input-hint-row">
+          <span><kbd>Enter</kbd> craft prompt &nbsp; <kbd>Shift+Enter</kbd> newline &nbsp; <kbd>/types</kbd> archetypes &nbsp; <kbd>/help</kbd> commands</span>
+          <span>PromptCraft by VR DEVELOPMENTS • Groq LPU™</span>
+        </div>
+      </footer>
+    </main>
+
+    <!-- History Drawer Backdrop (for mobile) -->
+    <div id="drawer-backdrop" class="drawer-backdrop"></div>
+
+    <!-- History Drawer (Prompt Library) -->
+    <aside id="history-drawer" class="history-drawer">
+      <div class="history-drawer-header">
+        <span class="history-title">PROMPTCRAFT // SAVED PROMPTS</span>
+        <button id="close-drawer-btn" class="close-drawer-btn" title="Close drawer">&times;</button>
+      </div>
+
+      <button id="new-chat-btn" class="new-chat-btn">
+        <span>+ Craft New Prompt (/new)</span>
+      </button>
+
+      <div id="history-list" class="history-list"></div>
+
+      <div class="history-footer">
+        <button id="clear-history-btn" class="clear-history-btn">Clear All Prompts</button>
+        <span style="font-size: 10px; color: var(--text-dim); align-self: center;">VR DEVELOPMENTS</span>
+      </div>
+    </aside>
+  </div>
+
+  <script src="app.js?v=5.5"></script>
+</body>
+</html>
